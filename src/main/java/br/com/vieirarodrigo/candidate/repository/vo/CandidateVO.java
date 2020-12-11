@@ -1,5 +1,6 @@
 package br.com.vieirarodrigo.candidate.repository.vo;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -17,14 +18,15 @@ import lombok.Setter;
 @AllArgsConstructor
 @Entity
 @Table(name = "CANDIDATE")
-public class CandidateVO {
+public class CandidateVO implements Serializable {
+	public static final long serialVersionUID = 1L;
 	@Column(name = "USER_ID")
-	private int userId;
+	public int userId;
 	@Column(name = "ACCELERATION_ID")
-	private int accelerationId;
+	public int accelerationId;
 	@Column(name = "COMPANY_ID")
-	private int companyId;
-	private int status;
+	public int companyId;
+	public int status;
 	@Column(name = "CREATED_AT")
-	private Date created;
+	public Date created;
 }
