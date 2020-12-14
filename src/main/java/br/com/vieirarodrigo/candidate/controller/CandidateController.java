@@ -20,20 +20,20 @@ import io.swagger.annotations.ApiOperation;
 @RequestMapping("/employee")
 public class CandidateController {
 	@Autowired
-	private CandidateBO CandidateBO;
+	private CandidateBO candidateBO;
 	@ApiOperation(value="This service creates a new Candidate in the database.")
 	@PostMapping(path = "/v1/Candidates")
 	public @ResponseBody CandidateVO save(@RequestBody CandidateDTO Candidate) {
-		return CandidateBO.save(Candidate);
+		return candidateBO.save(Candidate);
 	}
 	@ApiOperation(value="This service seeks to Candidate by CompanyId.")
 	@GetMapping(path = "/v1/Candidates/{id}")
-	public @ResponseBody Optional<CandidateVO> findByCompanyId(@PathVariable int companyId) {
-		return CandidateBO.findByCompanyId(companyId);
+	public @ResponseBody Optional<CandidateDTO> findByCompanyId(@PathVariable int companyId) {
+		return candidateBO.findByCompanyId(companyId);
 	}
 	@ApiOperation(value="This service seeks to Candidate by AccelerationId.")
 	@GetMapping(path = "/v1/Candidates/{name}")
-	public @ResponseBody Optional<CandidateVO> findByAccelerationId(@PathVariable int accelerationId) {
-		return CandidateBO.findByAccelerationId(accelerationId);
+	public @ResponseBody Optional<CandidateDTO> findByAccelerationId(@PathVariable int accelerationId) {
+		return candidateBO.findByAccelerationId(accelerationId);
 	}
 }

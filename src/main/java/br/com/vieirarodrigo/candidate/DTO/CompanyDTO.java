@@ -11,10 +11,9 @@ import lombok.Setter;
 @Setter
 @Builder
 @AllArgsConstructor
-public class CandidateDTO {
-	public AccelerationDTO acceleration;
-	public CompanyDTO company;
-	public UserDTO user;
-	public int status;
+public class CompanyDTO {
+	public int id;
+	public String name;
+	public String slug;
 	public Date created;
 }
